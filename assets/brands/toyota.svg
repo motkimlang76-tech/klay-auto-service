@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none">
+  <!-- Toyota triple-oval logo -->
+  <!-- Outer large horizontal oval -->
+  <ellipse cx="60" cy="42" rx="52" ry="24" stroke="white" stroke-width="2.5"/>
+  <!-- Inner vertical oval (forms the T crossbar top) -->
+  <ellipse cx="60" cy="36" rx="22" ry="30" stroke="white" stroke-width="2.5"/>
+  <!-- Small inner horizontal oval -->
+  <ellipse cx="60" cy="42" rx="34" ry="14" stroke="white" stroke-width="2.5"/>
+</svg>

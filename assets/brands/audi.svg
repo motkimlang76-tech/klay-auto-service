@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" fill="none">
+  <!-- Four interlocking rings -->
+  <circle cx="22"  cy="30" r="18" stroke="white" stroke-width="3"/>
+  <circle cx="54"  cy="30" r="18" stroke="white" stroke-width="3"/>
+  <circle cx="86"  cy="30" r="18" stroke="white" stroke-width="3"/>
+  <circle cx="118" cy="30" r="18" stroke="white" stroke-width="3"/>
+</svg>

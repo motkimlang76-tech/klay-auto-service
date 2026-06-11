@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" stroke="white" stroke-width="2.5"/>
+  <!-- Three-pointed star -->
+  <path d="M50 10 L54.5 46.5 L86.5 68.5 L50 52 L13.5 68.5 L45.5 46.5 Z" fill="white"/>
+  <circle cx="50" cy="50" r="4.5" fill="#111" stroke="white" stroke-width="1"/>
+</svg>

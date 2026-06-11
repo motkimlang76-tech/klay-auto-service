@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KLAY Auto Service | Premium Auto Repair &amp; Maintenance in Phnom Penh</title>
+  <meta name="description" content="KLAY Auto Service provides professional automotive repair, diagnostics, maintenance, brake service, suspension repair, air conditioning service, and luxury vehicle care in Phnom Penh, Cambodia." />
+  <meta name="keywords" content="Auto Repair Phnom Penh, Car Service Phnom Penh, Automotive Workshop Cambodia, Car Maintenance Phnom Penh, Engine Diagnostics Cambodia, Brake Repair Phnom Penh, Luxury Car Service Cambodia, KLAY Auto Service" />
+  <meta property="og:title" content="KLAY Auto Service | Premium Auto Repair &amp; Maintenance in Phnom Penh" />
+  <meta property="og:description" content="Professional automotive repair, diagnostics, and maintenance in Phnom Penh, Cambodia." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Kantumruy+Pro:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ──────────────────────────────────────────
+       RESET & VARIABLES
+    ────────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red:        #D40000;
+      --red-hover:  #FF1A1A;
+      --red-dim:    rgba(212,0,0,0.12);
+      --black:      #111111;
+      --bg:         #0A0A0A;
+      --surface:    #171717;
+      --surface-2:  #1E1E1E;
+      --border:     rgba(255,255,255,0.07);
+      --border-red: rgba(212,0,0,0.25);
+      --white:      #FFFFFF;
+      --silver:     #C0C0C0;
+      --muted:      #727272;
+      --gold:       #FFB800;
+      --heading:    'Space Grotesk', sans-serif;
+      --body:       'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--body);
+      overflow-x: hidden;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+    ::selection { background: var(--red); color: #fff; }
+
+    h1,h2,h3,h4,h5 { font-family: var(--heading); font-weight: 700; line-height: 1.12; }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ──────────────────────────────────────────
+       LAYOUT
+    ────────────────────────────────────────── */
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ──────────────────────────────────────────
+       SHARED COMPONENTS
+    ────────────────────────────────────────── */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 54px);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--silver);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 30px;
+      border-radius: 4px;
+      font-family: var(--heading);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      border: none;
+      transition: background .25s, transform .25s, box-shadow .25s, border-color .25s, color .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: #fff;
+    }
+    .btn-red:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(212,0,0,0.4);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.25);
+    }
+    .btn-ghost:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll-reveal */
+    .reveal { opacity: 0; transform: translateY(38px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-fade { opacity: 0; transition: opacity .8s ease; }
+    .reveal-fade.visible { opacity: 1; }
+
+    /* Stagger helpers */
+    .s1 { transition-delay: .1s; }
+    .s2 { transition-delay: .18s; }
+    .s3 { transition-delay: .26s; }
+    .s4 { transition-delay: .34s; }
+    .s5 { transition-delay: .42s; }
+    .s6 { transition-delay: .50s; }
+    .s7 { transition-delay: .58s; }
+    .s8 { transition-delay: .66s; }
+
+    /* ──────────────────────────────────────────
+       NAVIGATION
+    ────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 22px 0;
+      transition: padding .35s, background .35s, border-color .35s;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled {
+      padding: 13px 0;
+      background: rgba(10,10,10,.96);
+      backdrop-filter: blur(18px);
+      border-color: var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .logo-mark {
+      width: 42px; height: 42px;
+      background: var(--red);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--heading);
+      font-size: 17px; font-weight: 800;
+      color: #fff;
+      letter-spacing: -.5px;
+      flex-shrink: 0;
+    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-name { font-family: var(--heading); font-size: 17px; font-weight: 800; color: #fff; }
+    .logo-tag { font-size: 9.5px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+
+    /* Nav links */
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500;
+      color: var(--silver);
+      position: relative;
+      transition: color .2s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--red);
+      transition: width .3s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-phone {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--silver);
+      transition: color .2s;
+    }
+    .nav-phone svg { flex-shrink: 0; }
+    .nav-phone:hover { color: #fff; }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+
+    /* Mobile menu */
+    .mob-menu {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(10,10,10,.98);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 30px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      font-family: var(--heading);
+      font-size: 26px; font-weight: 700; color: #fff;
+      transition: color .2s;
+    }
+    .mob-menu a:hover { color: var(--red); }
+    .mob-close {
+      position: absolute; top: 24px; right: 24px;
+      background: none; border: none; color: #fff;
+      font-size: 30px; cursor: pointer; line-height: 1;
+    }
+
+    /* ──────────────────────────────────────────
+       HERO
+    ────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-media {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(105deg, rgba(212,0,0,.13) 0%, transparent 55%),
+        linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(10,10,10,.9) 100%),
+        url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=80') center/cover no-repeat;
+    }
+    .hero-media::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(10,10,10,.92) 38%, rgba(10,10,10,.15) 100%);
+    }
+
+    /* Subtle grid overlay */
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(212,0,0,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,0,0,.04) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+    }
+
+    /* Red glow blob */
+    .hero-glow {
+      position: absolute;
+      top: 10%; left: -10%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(212,0,0,.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-body {
+      position: relative; z-index: 2;
+      max-width: 820px;
+    }
+
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 7px 16px;
+      background: rgba(212,0,0,.12);
+      border: 1px solid rgba(212,0,0,.28);
+      border-radius: 100px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 26px;
+    }
+    .hero-chip-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--red);
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
+
+    .hero-title {
+      font-size: clamp(38px, 6.5vw, 90px);
+      font-weight: 900;
+      line-height: .98;
+      letter-spacing: -2px;
+      margin-bottom: 26px;
+    }
+    .hero-title .accent { color: var(--red); display: block; }
+
+    .hero-sub {
+      font-size: 16.5px;
+      color: var(--silver);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 42px;
+    }
+
+    .hero-btns {
+      display: flex; align-items: center; gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .hero-proof {
+      display: flex; align-items: center; gap: 28px;
+      flex-wrap: wrap;
+    }
+    .proof-item { display: flex; align-items: center; gap: 10px; }
+    .proof-stars { display: flex; gap: 3px; }
+    .proof-stars i { color: var(--gold); font-style: normal; font-size: 15px; }
+    .proof-label { display: flex; flex-direction: column; }
+    .proof-big { font-family: var(--heading); font-size: 20px; font-weight: 800; color: #fff; line-height: 1; }
+    .proof-small { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .proof-sep { width: 1px; height: 38px; background: var(--border); }
+    .proof-stat { display: flex; flex-direction: column; }
+    .proof-stat strong { font-family: var(--heading); font-size: 18px; font-weight: 800; color: #fff; line-height: 1; }
+    .proof-stat span { font-size: 11px; color: var(--muted); }
+
+    /* Brand ticker at bottom of hero */
+    .hero-ticker {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 3;
+      padding: 16px 0;
+      background: rgba(10,10,10,.82);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+    }
+    .ticker-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    }
+    .ticker-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--muted); white-space: nowrap;
+    }
+    .ticker-sep { width: 1px; height: 18px; background: var(--border); }
+    .ticker-brands {
+      display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+    }
+    .ticker-brand {
+      font-family: var(--heading); font-size: 12px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--silver); opacity: .65;
+      transition: opacity .2s;
+    }
+    .ticker-brand:hover { opacity: 1; }
+    .ticker-dot { color: rgba(212,0,0,.4); font-size: 10px; }
+
+    /* ──────────────────────────────────────────
+       TRUST STRIP
+    ────────────────────────────────────────── */
+    .trust {
+      padding: 96px 0;
+      background: var(--surface);
+      position: relative;
+    }
+    .trust::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--red), transparent);
+    }
+
+    .trust-hd { text-align: center; margin-bottom: 60px; }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 22px;
+    }
+
+    .trust-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 38px 30px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s, border-color .35s, box-shadow .35s;
+    }
+    .trust-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s;
+    }
+    .trust-card:hover { transform: translateY(-6px); border-color: var(--border-red); box-shadow: 0 22px 60px rgba(0,0,0,.45); }
+    .trust-card:hover::before { transform: scaleX(1); }
+
+    .trust-icon {
+      width: 54px; height: 54px;
+      background: var(--red-dim);
+      border: 1px solid rgba(212,0,0,0.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 22px;
+      color: var(--red);
+      transition: background .3s, border-color .3s;
+    }
+    .trust-card:hover .trust-icon {
+      background: rgba(212,0,0,0.2);
+      border-color: rgba(212,0,0,0.4);
+    }
+    .trust-icon svg { width: 26px; height: 26px; flex-shrink: 0; }
+    .trust-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+    .trust-card p { font-size: 13.5px; color: var(--silver); line-height: 1.7; }
+
+    /* ──────────────────────────────────────────
+       ABOUT
+    ────────────────────────────────────────── */
+    .about {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .about-img-wrap img {
+      width: 100%; height: 580px;
+      object-fit: cover;
+      filter: brightness(.82);
+      transition: filter .4s;
+    }
+    .about-img-wrap:hover img { filter: brightness(.9); }
+
+    /* Red corner accent */
+    .about-img-wrap::before {
+      content: '';
+      position: absolute; bottom: 0; right: 0;
+      width: 120px; height: 120px;
+      background: var(--red);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      z-index: 1;
+    }
+
+    .about-badge {
+      position: absolute; bottom: 30px; left: 30px;
+      z-index: 2;
+      background: rgba(10,10,10,.92);
+      border: 1px solid var(--border-red);
+      border-left: 4px solid var(--red);
+      border-radius: 6px;
+      padding: 16px 22px;
+    }
+    .about-badge-num {
+      font-family: var(--heading);
+      font-size: 34px; font-weight: 900; color: var(--red); line-height: 1;
+    }
+    .about-badge-lbl {
+      font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--muted); margin-top: 3px;
+    }
+
+    .about-copy { display: flex; flex-direction: column; gap: 28px; }
+    .about-copy p { font-size: 16px; color: var(--silver); line-height: 1.8; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 20px;
+      transition: border-color .25s;
+    }
+    .stat-box:hover { border-color: var(--border-red); }
+    .stat-num {
+      font-family: var(--heading);
+      font-size: 38px; font-weight: 900; color: var(--red); line-height: 1;
+    }
+    .stat-lbl { font-size: 12.5px; color: var(--muted); margin-top: 4px; letter-spacing: .5px; }
+
+    /* ──────────────────────────────────────────
+       SERVICES
+    ────────────────────────────────────────── */
+    .services {
+      padding: 120px 0;
+      background: var(--surface);
+    }
+    .services-hd {
+      display: flex; align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      gap: 32px;
+    }
+    .services-hd-right {
+      font-size: 14.5px; color: var(--silver);
+      line-height: 1.7; max-width: 320px;
+      text-align: right;
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .svc-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 34px 26px;
+      position: relative; overflow: hidden;
+      transition: transform .35s, border-color .35s, box-shadow .35s;
+      cursor: default;
+    }
+    .svc-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--red), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s;
+    }
+    .svc-card:hover { transform: translateY(-5px); border-color: var(--border-red); box-shadow: 0 18px 50px rgba(0,0,0,.45); }
+    .svc-card:hover::after { transform: scaleX(1); }
+
+    .svc-icon {
+      display: flex; align-items: center; justify-content: center;
+      width: 52px; height: 52px;
+      background: var(--red-dim);
+      border: 1px solid rgba(212,0,0,0.18);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      color: var(--red);
+      transition: background .3s, border-color .3s;
+    }
+    .svc-card:hover .svc-icon {
+      background: rgba(212,0,0,0.2);
+      border-color: rgba(212,0,0,0.4);
+    }
+    .svc-icon svg { width: 26px; height: 26px; flex-shrink: 0; }
+    .svc-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 9px; }
+    .svc-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .svc-more {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 12px; font-weight: 700;
+      color: var(--red); margin-top: 18px;
+      letter-spacing: .5px;
+      transition: gap .2s;
+    }
+    .svc-card:hover .svc-more { gap: 8px; }
+
+    /* ──────────────────────────────────────────
+       BRANDS MARQUEE
+    ────────────────────────────────────────── */
+    .brands-sec {
+      padding: 100px 0;
+      background: var(--bg);
+      overflow: hidden;
+    }
+    .brands-hd { text-align: center; margin-bottom: 56px; }
+
+    /* Brand marquee — real logos, infinite scroll */
+    .brand-marquee-wrap {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+      mask: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+    }
+
+    .brand-track {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      animation: brandScroll 36s linear infinite;
+    }
+    .brand-track:hover { animation-play-state: paused; }
+
+    @keyframes brandScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .brand-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-width: 160px;
+      padding: 28px 24px 22px;
+      margin: 0 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color .3s, background .3s, transform .3s;
+      cursor: default;
+      flex-shrink: 0;
+    }
+    .brand-card:hover {
+      border-color: var(--border-red);
+      background: rgba(212,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    .brand-card img {
+      width: 64px;
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: .72;
+      transition: opacity .3s;
+      display: block;
+    }
+    .brand-card:hover img { opacity: 1; }
+
+    /* Wider logos */
+    .brand-card img[alt="Audi"],
+    .brand-card img[alt="Land Rover"],
+    .brand-card img[alt="Ford"] { width: 90px; }
+
+    .brand-card span {
+      font-family: var(--heading);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* ──────────────────────────────────────────
+       PROCESS
+    ────────────────────────────────────────── */
+    .process {
+      padding: 120px 0;
+      background: var(--surface);
+    }
+    .process-hd { text-align: center; margin-bottom: 80px; }
+
+    .process-track {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      position: relative;
+    }
+    .process-track::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: calc(12.5% + 10px);
+      right: calc(12.5% + 10px);
+      height: 1px;
+      background: linear-gradient(to right, var(--red), rgba(212,0,0,.2), rgba(212,0,0,.2), var(--red));
+    }
+
+    .process-step {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 0 20px;
+    }
+
+    .process-circle {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--heading);
+      font-size: 22px; font-weight: 800; color: var(--red);
+      position: relative; z-index: 1;
+      margin-bottom: 30px;
+      transition: background .3s, color .3s, box-shadow .3s;
+    }
+    .process-step:hover .process-circle {
+      background: var(--red); color: #fff;
+      box-shadow: 0 0 40px rgba(212,0,0,.55);
+    }
+
+    .process-ico {
+      width: 52px; height: 52px;
+      background: var(--red-dim);
+      border: 1px solid rgba(212,0,0,0.18);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--red);
+      margin-bottom: 20px;
+      transition: background .3s, border-color .3s;
+    }
+    .process-step:hover .process-ico {
+      background: rgba(212,0,0,0.2);
+      border-color: rgba(212,0,0,0.4);
+    }
+    .process-ico svg { width: 24px; height: 24px; }
+    .process-step h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+    .process-step p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+    /* ──────────────────────────────────────────
+       REVIEWS
+    ────────────────────────────────────────── */
+    .reviews {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+    .reviews-hd { text-align: center; margin-bottom: 60px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+      margin-bottom: 48px;
+    }
+
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 34px 30px;
+      position: relative;
+      transition: transform .35s, border-color .35s, box-shadow .35s;
+    }
+    .review-card:hover { transform: translateY(-4px); border-color: var(--border-red); box-shadow: 0 16px 50px rgba(0,0,0,.5); }
+
+    .review-quot {
+      position: absolute; top: 22px; right: 22px;
+      font-size: 52px; font-family: Georgia, serif;
+      color: rgba(212,0,0,.12); line-height: 1; pointer-events: none;
+    }
+
+    .review-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+    .review-stars i { color: var(--gold); font-style: normal; font-size: 15px; }
+
+    .review-body {
+      font-size: 14.5px; color: var(--silver);
+      line-height: 1.75; font-style: italic;
+      margin-bottom: 26px;
+    }
+
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-av {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--heading);
+      font-size: 16px; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .reviewer-name { font-size: 14px; font-weight: 600; line-height: 1; margin-bottom: 4px; }
+    .reviewer-meta { font-size: 11.5px; color: var(--muted); }
+
+    /* Rating highlight bar */
+    .rating-bar {
+      display: flex; align-items: center; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
+      padding: 40px 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .rb-score {
+      font-family: var(--heading);
+      font-size: 76px; font-weight: 900; color: var(--red); line-height: 1;
+    }
+    .rb-detail { display: flex; flex-direction: column; gap: 6px; }
+    .rb-stars { display: flex; gap: 4px; }
+    .rb-stars i { color: var(--gold); font-style: normal; font-size: 26px; }
+    .rb-txt { font-size: 16px; color: var(--silver); }
+    .rb-src { font-size: 12px; color: var(--muted); }
+    .rb-div { width: 1px; height: 60px; background: var(--border); }
+    .rb-stat { text-align: center; }
+    .rb-stat strong { font-family: var(--heading); font-size: 40px; font-weight: 800; color: #fff; display: block; line-height: 1; }
+    .rb-stat span { font-size: 13px; color: var(--muted); margin-top: 5px; display: block; }
+
+    /* ──────────────────────────────────────────
+       GALLERY
+    ────────────────────────────────────────── */
+    .gallery {
+      padding: 120px 0;
+      background: var(--surface);
+    }
+    .gallery-hd { text-align: center; margin-bottom: 60px; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: 260px 260px;
+      gap: 14px;
+    }
+
+    .g-item {
+      border-radius: 8px; overflow: hidden;
+      position: relative; cursor: zoom-in;
+    }
+    .g-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .g-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(.78);
+      transition: transform .6s ease, filter .4s;
+    }
+    .g-item:hover img { transform: scale(1.07); filter: brightness(.55); }
+
+    .g-overlay {
+      position: absolute; inset: 0;
+      background: rgba(212,0,0,.65);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .g-item:hover .g-overlay { opacity: 1; }
+    .g-overlay span { font-size: 28px; }
+
+    /* ──────────────────────────────────────────
+       CTA BANNER
+    ────────────────────────────────────────── */
+    .cta-banner {
+      padding: 140px 0;
+      position: relative; overflow: hidden;
+    }
+    .cta-banner-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(rgba(10,10,10,.86), rgba(10,10,10,.86)),
+        url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1920&q=80') center/cover no-repeat;
+    }
+    /* Diagonal red stripe */
+    .cta-banner-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg, rgba(212,0,0,.12) 0%, transparent 60%);
+    }
+    .cta-inner {
+      position: relative; z-index: 1;
+      text-align: center; max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-inner .section-title { font-size: clamp(30px, 5vw, 66px); margin-bottom: 18px; }
+    .cta-inner .section-sub { margin: 0 auto 40px; text-align: center; }
+    .cta-btns { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ──────────────────────────────────────────
+       CONTACT
+    ────────────────────────────────────────── */
+    .contact {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+    .contact-hd { text-align: center; margin-bottom: 60px; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .contact-cards { display: flex; flex-direction: column; gap: 18px; }
+
+    .c-card {
+      display: flex; align-items: center; gap: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 22px;
+      transition: border-color .25s;
+    }
+    .c-card:hover { border-color: var(--border-red); }
+    .c-card-icon {
+      width: 48px; height: 48px;
+      background: var(--red-dim);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--red);
+    }
+    .c-card-icon svg { width: 22px; height: 22px; }
+    .c-card-content h4 {
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 5px;
+    }
+    .c-card-content p,
+    .c-card-content a {
+      font-size: 15px; font-weight: 600; color: #fff;
+      transition: color .2s;
+    }
+    .c-card-content a:hover { color: var(--red); }
+
+    .social-row {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .soc-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px; font-weight: 600; color: #fff;
+      transition: filter .2s, transform .2s;
+    }
+    .soc-btn:hover { filter: brightness(1.12); transform: translateY(-2px); }
+    .soc-wa  { background: #25D366; }
+    .soc-fb  { background: #1877F2; }
+    .soc-tg  { background: #0088CC; }
+
+    .map-box {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 100%;
+      min-height: 460px;
+    }
+    .map-box iframe {
+      width: 100%; height: 100%;
+      min-height: 460px;
+      border: none;
+      filter: invert(.92) hue-rotate(180deg) brightness(.82) contrast(1.1) saturate(.8);
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .map-box { min-height: 320px; }
+      .map-box iframe { min-height: 320px; }
+    }
+
+    /* ──────────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────────── */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 64px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 44px;
+      margin-bottom: 52px;
+    }
+
+    .footer-brand { display: flex; flex-direction: column; gap: 18px; }
+    .footer-tagline { font-size: 13.5px; color: var(--muted); line-height: 1.7; max-width: 270px; }
+    .footer-rating { display: flex; align-items: center; gap: 8px; }
+    .footer-rating .stars { display: flex; gap: 2px; }
+    .footer-rating .stars i { color: var(--gold); font-style: normal; font-size: 13px; }
+    .footer-rating span { font-size: 12.5px; color: var(--muted); }
+
+    .footer-col h4 {
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col ul a { font-size: 13.5px; color: var(--silver); transition: color .2s; }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-col ul li { font-size: 13.5px; color: var(--muted); }
+
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; gap: 14px;
+    }
+    .footer-copy { font-size: 12.5px; color: var(--muted); }
+    .footer-copy span { color: var(--red); }
+
+    /* ──────────────────────────────────────────
+       FLOATING BUTTONS
+    ────────────────────────────────────────── */
+    .float-dock {
+      position: fixed;
+      bottom: 30px; right: 28px;
+      z-index: 200;
+      display: flex; flex-direction: column; gap: 12px;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity .4s, transform .4s;
+      pointer-events: none;
+    }
+    .float-dock.show { opacity: 1; transform: none; pointer-events: all; }
+
+    .f-btn {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,.35);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .f-btn:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(0,0,0,.45); }
+    .f-btn.call { background: var(--red); }
+    .f-btn.wa   { background: #25D366; }
+
+    /* ──────────────────────────────────────────
+       RESPONSIVE
+    ────────────────────────────────────────── */
+    @media (max-width: 1080px) {
+      .trust-grid, .svc-grid { grid-template-columns: repeat(2,1fr); }
+      .process-track { grid-template-columns: repeat(2,1fr); gap: 44px; }
+      .process-track::before { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-img-wrap img { height: 360px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .nav-cta-btn { display: none; }
+
+      .hero-title { font-size: clamp(34px, 9vw, 60px); }
+      .hero-btns { flex-direction: column; align-items: flex-start; }
+
+      .trust-grid { grid-template-columns: 1fr; }
+      .svc-grid    { grid-template-columns: 1fr; }
+
+      .services-hd { flex-direction: column; align-items: flex-start; }
+      .services-hd-right { text-align: left; }
+
+      .reviews-grid { grid-template-columns: 1fr; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: unset;
+      }
+      .g-item:first-child { grid-column: span 2; }
+
+      .contact-layout { grid-template-columns: 1fr; }
+
+      .rating-bar { gap: 24px; flex-direction: column; text-align: center; }
+      .rb-div { display: none; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .g-item:first-child { grid-column: unset; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-proof { flex-direction: column; align-items: flex-start; }
+      .proof-sep { display: none; }
+    }
+
+    /* ──────────────────────────────────────────
+       SVG LOGO
+    ────────────────────────────────────────── */
+    .logo { display: flex; align-items: center; }
+    .klay-svg-logo { height: 46px; width: auto; display: block; }
+    .footer-brand .klay-svg-logo { height: 58px; }
+
+    /* ──────────────────────────────────────────
+       LANGUAGE TOGGLE
+    ────────────────────────────────────────── */
+    .lang-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 13px;
+      font-family: var(--heading);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--silver);
+      cursor: pointer;
+      transition: border-color .2s, color .2s, background .2s;
+      flex-shrink: 0;
+    }
+    .lang-btn:hover { border-color: var(--red); color: #fff; background: var(--red-dim); }
+
+    /* ──────────────────────────────────────────
+       BILINGUAL TEXT SYSTEM
+       .t-en / .t-kh  — inline spans
+       .b-en / .b-kh  — block elements
+    ────────────────────────────────────────── */
+    .t-kh, .b-kh { display: none; font-family: 'Kantumruy Pro', sans-serif; }
+    body.lang-kh .t-en { display: none; }
+    body.lang-kh .t-kh { display: inline; }
+    body.lang-kh .b-en { display: none; }
+    body.lang-kh .b-kh { display: block; }
+
+    /* Khmer headings inherit block treatment */
+    body.lang-kh h1 .t-kh,
+    body.lang-kh h2 .t-kh,
+    body.lang-kh h3 .t-kh { display: inline; }
+
+    /* Sub-labels in Khmer get slightly larger font */
+    .t-kh, .b-kh { font-size: 105%; line-height: 1.6; }
+
+    /* Nav Khmer labels stay same size */
+    .nav-links .t-kh { font-size: 100%; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <svg class="klay-svg-logo" viewBox="0 0 232 74" xmlns="http://www.w3.org/2000/svg" aria-label="KLAY Auto Service">
+        <defs>
+          <linearGradient id="kRed" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#CC1E1E"/>
+            <stop offset="55%" stop-color="#A81212"/>
+            <stop offset="100%" stop-color="#780808"/>
+          </linearGradient>
+        </defs>
+        <g transform="skewX(-7)">
+          <text x="4" y="51" font-family="'Bebas Neue','Impact',Arial,sans-serif" font-size="57" fill="url(#kRed)" letter-spacing="2">KLAY</text>
+        </g>
+        <polygon points="2,57 230,57 225,74 -3,74" fill="#111111"/>
+        <g fill="rgba(255,255,255,0.84)">
+          <polygon points="2,58 5,58 1,73 -2,73"/>
+          <polygon points="7,58 10.5,58 6.5,73 3,73"/>
+          <polygon points="13,58 17,58 13,73 9,73"/>
+          <polygon points="20,58 24.5,58 20.5,73 16,73"/>
+          <polygon points="27.5,58 32.5,58 28.5,73 23.5,73"/>
+          <polygon points="36,58 41.5,58 37.5,73 32,73"/>
+          <polygon points="45,58 51,58 47,73 41,73"/>
+        </g>
+        <line x1="56" y1="58" x2="52" y2="74" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+        <text x="61" y="70" font-family="'Inter',Arial,sans-serif" font-weight="700" font-size="11.5" fill="white" letter-spacing="3.5">AUTO SERVICE</text>
+      </svg>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about"><span class="t-en">About</span><span class="t-kh">អំពីយើង</span></a></li>
+      <li><a href="#services"><span class="t-en">Services</span><span class="t-kh">សេវាកម្ម</span></a></li>
+      <li><a href="#process"><span class="t-en">Process</span><span class="t-kh">ដំណើរការ</span></a></li>
+      <li><a href="#reviews"><span class="t-en">Reviews</span><span class="t-kh">មតិអតិថិជន</span></a></li>
+      <li><a href="#gallery"><span class="t-en">Gallery</span><span class="t-kh">វិចិត្រសាល</span></a></li>
+      <li><a href="#contact"><span class="t-en">Contact</span><span class="t-kh">ទំនាក់ទំនង</span></a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="tel:061886898" class="nav-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        061 886 898
+      </a>
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()">
+        <span class="t-en">ភាសាខ្មែរ</span><span class="t-kh">English</span>
+      </button>
+      <a href="#contact" class="btn btn-red nav-cta-btn" style="padding: 10px 20px; font-size: 13px;"><span class="t-en">Book Service</span><span class="t-kh">កក់សេវា</span></a>
+      <div class="hamburger" id="ham">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  <a href="#about"    onclick="closeMenu()"><span class="t-en">About</span><span class="t-kh">អំពីយើង</span></a>
+  <a href="#services" onclick="closeMenu()"><span class="t-en">Services</span><span class="t-kh">សេវាកម្ម</span></a>
+  <a href="#process"  onclick="closeMenu()"><span class="t-en">Process</span><span class="t-kh">ដំណើរការ</span></a>
+  <a href="#reviews"  onclick="closeMenu()"><span class="t-en">Reviews</span><span class="t-kh">មតិអតិថិជន</span></a>
+  <a href="#gallery"  onclick="closeMenu()"><span class="t-en">Gallery</span><span class="t-kh">វិចិត្រសាល</span></a>
+  <a href="#contact"  onclick="closeMenu()"><span class="t-en">Contact</span><span class="t-kh">ទំនាក់ទំនង</span></a>
+  <button class="lang-btn" onclick="toggleLang(); closeMenu();" style="font-size:14px; padding:10px 24px; margin-top:8px;">
+    <span class="t-en">🇰🇭 ភាសាខ្មែរ</span><span class="t-kh">🇬🇧 English</span>
+  </button>
+  <a href="tel:061886898" class="btn btn-red" style="margin-top: 6px;">Call 061 886 898</a>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-media"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="wrap">
+    <div class="hero-body">
+
+      <div class="hero-chip">
+        <div class="hero-chip-dot"></div>
+        <span class="t-en">Phnom Penh's Premium Auto Service</span>
+        <span class="t-kh">សេវាឡានកំពូលនៃភ្នំពេញ</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="t-en">KEEP YOUR CAR<br><span class="accent">PERFORMING</span> AT ITS BEST</span>
+        <span class="t-kh" style="font-family:'Kantumruy Pro',sans-serif; font-size:clamp(28px,5vw,60px); line-height:1.25; display:none;">រក្សាឡានរបស់អ្នក<br><span class="accent">ដំណើរការ</span>ល្អបំផុត</span>
+      </h1>
+
+      <p class="hero-sub b-en">
+        Professional automotive repair, diagnostics, maintenance, and detailing services trusted by thousands of vehicle owners in Phnom Penh.
+      </p>
+      <p class="hero-sub b-kh">
+        សេវាជួសជុល ធ្វើរោគវិនិច្ឆ័យ ថែទាំ និងជ្រះសំអាតយានយន្តប្រកបដោយវិជ្ជាជីវៈ ដែលត្រូវបានទុកចិត្តដោយម្ចាស់ឡានរាប់ពាន់នាក់នៅភ្នំពេញ។
+      </p>
+
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-red">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+          <span class="t-en">Book Appointment</span><span class="t-kh">កក់ការណាត់</span>
+        </a>
+        <a href="tel:061886898" class="btn btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span class="t-en">Call Now</span><span class="t-kh">ទូរស័ព្ទឥឡូវ</span>
+        </a>
+      </div>
+
+      <div class="hero-proof">
+        <div class="proof-item">
+          <div class="proof-stars">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+          </div>
+          <div class="proof-label">
+            <span class="proof-big">4.5</span>
+            <span class="proof-small">46+ Google Reviews</span>
+          </div>
+        </div>
+        <div class="proof-sep"></div>
+        <div class="proof-stat">
+          <strong>5,000+</strong>
+          <span class="t-en">Vehicles Serviced</span><span class="t-kh">គ្រឿងយានបានដោះស្រាយ</span>
+        </div>
+        <div class="proof-sep"></div>
+        <div class="proof-stat">
+          <strong>10+</strong>
+          <span class="t-en">Years Experience</span><span class="t-kh">ឆ្នាំបទពិសោធន៍</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Brand ticker -->
+  <div class="hero-ticker">
+    <div class="ticker-inner">
+      <span class="ticker-label">Brands We Service</span>
+      <div class="ticker-sep"></div>
+      <div class="ticker-brands">
+        <span class="ticker-brand">Mercedes-Benz</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">BMW</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Audi</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Lexus</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Toyota</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Land Rover</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Porsche</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Rolls Royce</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Lamborghini</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Jeep</span>
+        <span class="ticker-dot">·</span>
+        <span class="ticker-brand">Ford</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     TRUST
+═══════════════════════════════════ -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-hd reveal">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2 class="section-title">Why Drivers Choose KLAY Auto Service</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">
+        We combine expertise, advanced technology, and exceptional care to deliver the automotive service you deserve.
+      </p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card reveal s1">
+        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3><span class="t-en">Certified Technicians</span><span class="t-kh">ជាងដែលមានវិញ្ញាបនបត្រ</span></h3>
+        <p class="b-en">Experienced automotive specialists with advanced diagnostic expertise and years of hands-on service.</p>
+        <p class="b-kh">ជាងយន្តហោះដែលមានបទពិសោធន៍ ជំនាញផ្នែកធ្វើរោគវិនិច្ឆ័យកម្រិតខ្ពស់ និងការអនុវត្តជាក់ស្ដែងច្រើនឆ្នាំ។</p>
+      </div>
+      <div class="trust-card reveal s2">
+        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M5 10h2l2-4 3 8 2-4h3"/></svg></div>
+        <h3><span class="t-en">Premium Equipment</span><span class="t-kh">ឧបករណ៍ប្រណីត</span></h3>
+        <p class="b-en">Modern diagnostic systems and professional-grade tools for accurate, efficient service every time.</p>
+        <p class="b-kh">ប្រព័ន្ធធ្វើរោគវិនិច្ឆ័យទំនើប និងឧបករណ៍វិជ្ជាជីវៈកំរិតខ្ពស់ ដើម្បីផ្ដល់សេវាត្រឹមត្រូវ និងមានប្រសិទ្ធភាព។</p>
+      </div>
+      <div class="trust-card reveal s3">
+        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3><span class="t-en">Honest Pricing</span><span class="t-kh">តម្លៃស្មោះត្រង់</span></h3>
+        <p class="b-en">Transparent estimates with no hidden costs. You always know exactly what you're paying for.</p>
+        <p class="b-kh">ការប៉ាន់ស្មានតម្លៃប្រកបដោយតម្លាភាព មិនមានចំណាយលាក់បាំង។ អ្នកដឹងច្បាស់ពីអ្វីដែលអ្នកបង់ប្រាក់។</p>
+      </div>
+      <div class="trust-card reveal s4">
+        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <h3><span class="t-en">Customer Satisfaction</span><span class="t-kh">ការពេញចិត្តអតិថិជន</span></h3>
+        <p class="b-en">Trusted by local and international customers with a proven track record of excellence.</p>
+        <p class="b-kh">ទទួលជឿទុកចិត្តដោយអតិថិជនក្នុង និងក្រៅប្រទេស ជាមួយកំណត់ត្រានៃការប្រតិបត្តិការដ៏ល្អ។</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     ABOUT
+═══════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div class="about-img-wrap reveal-fade">
+        <img
+          src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80"
+          alt="KLAY Auto Service technicians at work"
+          loading="lazy"
+        />
+        <div class="about-badge">
+          <div class="about-badge-num">10+</div>
+          <div class="about-badge-lbl">Years of Excellence</div>
+        </div>
+      </div>
+
+      <div class="about-copy reveal">
+        <div>
+          <div class="eyebrow"><span class="t-en">About Us</span><span class="t-kh">អំពីយើង</span></div>
+          <h2 class="section-title">
+            <span class="t-en">Phnom Penh's Trusted Auto Service Center</span>
+            <span class="t-kh" style="font-family:'Kantumruy Pro',sans-serif;">មជ្ឈមណ្ឌលសេវាឡានដែលទុកចិត្ត​នៅភ្នំពេញ</span>
+          </h2>
+        </div>
+        <p class="b-en">
+          At KLAY Auto Service, we combine technical expertise, advanced equipment, and exceptional customer care to deliver reliable automotive solutions. From routine maintenance to complex diagnostics, we ensure every vehicle receives the highest level of attention and professionalism.
+        </p>
+        <p class="b-kh">
+          នៅ KLAY Auto Service យើងបញ្ចូលគ្នានូវជំនាញបច្ចេកទេស ឧបករណ៍ទំនើប និងការថែទាំអតិថិជនពិសេស ដើម្បីផ្ដល់ដំណោះស្រាយយានយន្តដែលអាចទុកចិត្តបាន ចាប់ពីការថែទាំប្រចាំ​ទៅដល់ការធ្វើរោគវិនិច្ឆ័យស្មុគស្មាញ។
+        </p>
+        <p class="b-en">
+          Located on Street 1003 in Phnom Penh, our state-of-the-art facility is equipped to handle all makes and models — from everyday vehicles to the world's most prestigious luxury brands.
+        </p>
+        <p class="b-kh">
+          តាំងនៅផ្លូវ ១០០៣ ក្នុងក្រុងភ្នំពេញ សម្ភារៈដ្ឋានរបស់យើងត្រូវបានបំពាក់ ដើម្បីធ្វើការជាមួយឡានគ្រប់ម៉ូដែល ចាប់ពីឡានប្រចាំថ្ងៃ រហូតដល់ម៉ាកប្រណីតលំដាប់ពិភពលោក។
+        </p>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-num" data-count="5000" data-suffix="+">5,000+</div>
+            <div class="stat-lbl"><span class="t-en">Vehicles Serviced</span><span class="t-kh">យានយន្តបានបម្រើ</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">4.5★</div>
+            <div class="stat-lbl"><span class="t-en">Customer Rating</span><span class="t-kh">ការវាយតម្លៃអតិថិជន</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" data-count="10" data-suffix="+">10+</div>
+            <div class="stat-lbl"><span class="t-en">Years Experience</span><span class="t-kh">ឆ្នាំបទពិសោធន៍</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" data-count="100" data-suffix="%">100%</div>
+            <div class="stat-lbl">Customer Commitment</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     SERVICES
+═══════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-hd">
+      <div class="reveal">
+        <div class="eyebrow"><span class="t-en">What We Offer</span><span class="t-kh">អ្វីដែលយើងផ្ដល់ជូន</span></div>
+        <h2 class="section-title">
+          <span class="t-en">Our Services</span>
+          <span class="t-kh" style="font-family:'Kantumruy Pro',sans-serif;">សេវាកម្មរបស់យើង</span>
+        </h2>
+      </div>
+      <p class="services-hd-right reveal b-en">
+        Comprehensive automotive care from routine maintenance to complex repairs — performed by experts.
+      </p>
+      <p class="services-hd-right reveal b-kh">
+        ការថែទាំយានយន្តគ្រប់ប្រភេទ ចាប់ពីការថែទាំប្រចាំ​ ទៅដល់ការជួសជុលស្មុគស្មាញ ដោយជាងជំនាញ។
+      </p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc-card reveal s1">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+        <h3><span class="t-en">Engine Diagnostics</span><span class="t-kh">វិភាគម៉ាស៊ីន</span></h3>
+        <p class="b-en">Advanced scanning and troubleshooting for accurate fault identification and resolution.</p>
+        <p class="b-kh">ការស្កែន និងដោះស្រាយបញ្ហាកម្រិតខ្ពស់ ដើម្បីកំណត់ការខូចខាតបានត្រឹមត្រូវ។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+      <div class="svc-card reveal s2">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3l2-3h8l2 3h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+        <h3><span class="t-en">Suspension Repair</span><span class="t-kh">ជួសជុលស្ព័ន</span></h3>
+        <p class="b-en">Restore smooth and safe driving performance with expert suspension inspection and repair.</p>
+        <p class="b-kh">ស្ដារការបើកបរដោយរលូន និងសុវត្ថិភាពជាមួយការត្រួតពិនិត្យ និងជួសជុលស្ព័នដោយជាងជំនាញ។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+      <div class="svc-card reveal s3">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg></span>
+        <h3><span class="t-en">Brake System Service</span><span class="t-kh">ជួសជុលហ្វ្រាំង</span></h3>
+        <p class="b-en">Complete brake inspection, repair, and replacement for your safety on the road.</p>
+        <p class="b-kh">ការត្រួតពិនិត្យ ជួសជុល និងផ្លាស់ប្ដូរហ្វ្រាំងពេញលេញ ដើម្បីសុវត្ថិភាពលើផ្លូវវ។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+      <div class="svc-card reveal s4">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/><path d="m20 16-4-4 4-4M4 8l4 4-4 4M16 4l-4 4-4-4M8 20l4-4 4 4"/></svg></span>
+        <h3><span class="t-en">Air Conditioning Repair</span><span class="t-kh">ជួសជុលម៉ាស៊ីនត្រជាក់</span></h3>
+        <p class="b-en">Cooling system maintenance and full restoration for maximum cabin comfort.</p>
+        <p class="b-kh">ការថែទាំប្រព័ន្ធត្រជាក់ និងការស្ដារឡើងវិញពេញលេញ ដើម្បីផ្ដល់ភាពស្រជុះស្រួលអតិបរមា។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+      <div class="svc-card reveal s1">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
+        <h3><span class="t-en">Oil Change &amp; Maintenance</span><span class="t-kh">ប្តូរប្រេង និងថែទាំ</span></h3>
+        <p class="b-en">Manufacturer-recommended servicing with premium-grade lubricants and filters.</p>
+        <p class="b-kh">សេវាតាមការណែនាំរបស់ក្រុមហ៊ុនផលិត ជាមួយប្រេង និងតម្រងគុណភាពខ្ពស់។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+      <div class="svc-card reveal s2">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+        <h3><span class="t-en">Electrical Repair</span><span class="t-kh">ជួសជុលអគ្គិសនី</span></h3>
+        <p class="b-en">Battery, alternator, wiring diagnostics and full electronic systems service.</p>
+        <p class="b-kh">ការធ្វើរោគវិនិច្ឆ័យថ្ម ជែនរ៉ាតឺ ខ្សែ និងការជួសជុលប្រព័ន្ធអេឡិចត្រូនិកទាំងស្រុង។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+      <div class="svc-card reveal s3">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></span>
+        <h3><span class="t-en">Wheel Alignment</span><span class="t-kh">តម្រឹមកង់</span></h3>
+        <p class="b-en">Precision alignment to improve handling performance and extend tire lifespan.</p>
+        <p class="b-kh">ការតម្រឹមត្រឹមត្រូវ ដើម្បីបង្កើនការបើកបរ និងពន្យារអាយុកាលកង់។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+      <div class="svc-card reveal s4">
+        <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/><line x1="9" y1="10" x2="15" y2="10"/></svg></span>
+        <h3><span class="t-en">Vehicle Inspection</span><span class="t-kh">ត្រួតពិនិត្យយានយន្ត</span></h3>
+        <p class="b-en">Comprehensive health check covering all critical vehicle systems and components.</p>
+        <p class="b-kh">ការត្រួតពិនិត្យសុខភាពយ៉ាងទូលំទូលាយ គ្របដណ្ដប់ប្រព័ន្ធ​ និងសមាសផ្នែកសំខាន់ៗ​ទាំងអស់។</p>
+        <span class="svc-more"><span class="t-en">Learn More</span><span class="t-kh">ស្វែងយល់បន្ថែម</span> →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     BRANDS GRID
+═══════════════════════════════════ -->
+<section class="brands-sec" id="brands">
+  <div class="wrap">
+    <div class="brands-hd reveal">
+      <div class="eyebrow" style="justify-content: center;"><span class="t-en">Our Expertise</span><span class="t-kh">ជំនាញរបស់យើង</span></div>
+      <h2 class="section-title">
+        <span class="t-en">Trusted By Owners Of The World's Finest Vehicles</span>
+        <span class="t-kh" style="font-family:'Kantumruy Pro',sans-serif;">ទទួលជឿទុកចិត្តដោយម្ចាស់ឡានល្បីពិភពលោក</span>
+      </h2>
+      <p class="section-sub b-en" style="margin: 0 auto; text-align: center;">
+        We service and maintain all major automotive brands with specialist-level care.
+      </p>
+      <p class="section-sub b-kh" style="margin: 0 auto; text-align: center;">
+        យើងបម្រើ និងថែទាំម៉ាកយានយន្តធំៗទាំងអស់ ដោយការថែទាំដូចអ្នកជំនាញ។
+      </p>
+    </div>
+
+  </div><!-- /.wrap (header only) -->
+
+  <div class="brand-marquee-wrap">
+    <div class="brand-track">
+      <!-- Set 1 -->
+      <div class="brand-card"><img src="assets/brands/mercedes-benz.svg" alt="Mercedes-Benz" /><span>Mercedes-Benz</span></div>
+      <div class="brand-card"><img src="assets/brands/bmw.svg" alt="BMW" /><span>BMW</span></div>
+      <div class="brand-card"><img src="assets/brands/audi.svg" alt="Audi" /><span>Audi</span></div>
+      <div class="brand-card"><img src="assets/brands/lexus.svg" alt="Lexus" /><span>Lexus</span></div>
+      <div class="brand-card"><img src="assets/brands/toyota.svg" alt="Toyota" /><span>Toyota</span></div>
+      <div class="brand-card"><img src="assets/brands/land-rover.svg" alt="Land Rover" /><span>Land Rover</span></div>
+      <div class="brand-card"><img src="assets/brands/porsche.svg" alt="Porsche" /><span>Porsche</span></div>
+      <div class="brand-card"><img src="assets/brands/rolls-royce.svg" alt="Rolls-Royce" /><span>Rolls-Royce</span></div>
+      <div class="brand-card"><img src="assets/brands/lamborghini.svg" alt="Lamborghini" /><span>Lamborghini</span></div>
+      <div class="brand-card"><img src="assets/brands/jeep.svg" alt="Jeep" /><span>Jeep</span></div>
+      <div class="brand-card"><img src="assets/brands/ford.svg" alt="Ford" /><span>Ford</span></div>
+      <!-- Set 2 — duplicate for seamless infinite loop -->
+      <div class="brand-card"><img src="assets/brands/mercedes-benz.svg" alt="Mercedes-Benz" /><span>Mercedes-Benz</span></div>
+      <div class="brand-card"><img src="assets/brands/bmw.svg" alt="BMW" /><span>BMW</span></div>
+      <div class="brand-card"><img src="assets/brands/audi.svg" alt="Audi" /><span>Audi</span></div>
+      <div class="brand-card"><img src="assets/brands/lexus.svg" alt="Lexus" /><span>Lexus</span></div>
+      <div class="brand-card"><img src="assets/brands/toyota.svg" alt="Toyota" /><span>Toyota</span></div>
+      <div class="brand-card"><img src="assets/brands/land-rover.svg" alt="Land Rover" /><span>Land Rover</span></div>
+      <div class="brand-card"><img src="assets/brands/porsche.svg" alt="Porsche" /><span>Porsche</span></div>
+      <div class="brand-card"><img src="assets/brands/rolls-royce.svg" alt="Rolls-Royce" /><span>Rolls-Royce</span></div>
+      <div class="brand-card"><img src="assets/brands/lamborghini.svg" alt="Lamborghini" /><span>Lamborghini</span></div>
+      <div class="brand-card"><img src="assets/brands/jeep.svg" alt="Jeep" /><span>Jeep</span></div>
+      <div class="brand-card"><img src="assets/brands/ford.svg" alt="Ford" /><span>Ford</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PROCESS
+═══════════════════════════════════ -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="process-hd reveal">
+      <div class="eyebrow" style="justify-content: center;">How It Works</div>
+      <h2 class="section-title">Our Work Process</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">
+        A structured, transparent approach to every service — no surprises, only results.
+      </p>
+    </div>
+
+    <div class="process-track">
+      <div class="process-step reveal s1">
+        <div class="process-circle">01</div>
+        <div class="process-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3><span class="t-en">Vehicle Inspection</span><span class="t-kh">ត្រួតពិនិត្យយានយន្ត</span></h3>
+        <p class="b-en">Complete diagnostic assessment of your vehicle's systems and current condition.</p>
+        <p class="b-kh">ការវាយតម្លៃធ្វើរោគវិនិច្ឆ័យពេញលេញលើប្រព័ន្ធ និងស្ថានភាពបច្ចុប្បន្នរបស់ឡានអ្នក។</p>
+      </div>
+      <div class="process-step reveal s2">
+        <div class="process-circle">02</div>
+        <div class="process-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></div>
+        <h3><span class="t-en">Detailed Report</span><span class="t-kh">របាយការណ៍លម្អិត</span></h3>
+        <p class="b-en">Clear explanation of all findings with a transparent quotation before any work begins.</p>
+        <p class="b-kh">ការពន្យល់ច្បាស់លាស់អំពីការស្វែងរកទាំងអស់ ជាមួយការដំណើរការតម្លៃប្រកបដោយតម្លាភាព។</p>
+      </div>
+      <div class="process-step reveal s3">
+        <div class="process-circle">03</div>
+        <div class="process-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3><span class="t-en">Professional Repair</span><span class="t-kh">ជួសជុលប្រកបដោយវិជ្ជាជីវៈ</span></h3>
+        <p class="b-en">Service performed by experienced technicians using manufacturer-approved parts.</p>
+        <p class="b-kh">សេវាអនុវត្តដោយជាងដែលមានបទពិសោធន៍ ដោយប្រើប្រាស់គ្រឿងផ្នែកដែលត្រូវបានអនុម័ត។</p>
+      </div>
+      <div class="process-step reveal s4">
+        <div class="process-circle">04</div>
+        <div class="process-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3><span class="t-en">Quality Check</span><span class="t-kh">ពិនិត្យគុណភាព</span></h3>
+        <p class="b-en">Rigorous final testing and multi-point inspection before we hand your vehicle back.</p>
+        <p class="b-kh">ការសាកល្បងចុងក្រោយ និងការត្រួតពិនិត្យច្រើនចំណុច មុននឹងប្រគល់ឡានរបស់អ្នកមកវិញ។</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     REVIEWS
+═══════════════════════════════════ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-hd reveal">
+      <div class="eyebrow" style="justify-content: center;"><span class="t-en">Customer Reviews</span><span class="t-kh">មតិអតិថិជន</span></div>
+      <h2 class="section-title">
+        <span class="t-en">What Our Clients Say</span>
+        <span class="t-kh" style="font-family:'Kantumruy Pro',sans-serif;">អ្វីដែលអតិថិជនរបស់យើងនិយាយ</span>
+      </h2>
+      <p class="section-sub b-en" style="margin: 0 auto; text-align: center;">
+        Real experiences from valued customers in Phnom Penh and beyond.
+      </p>
+      <p class="section-sub b-kh" style="margin: 0 auto; text-align: center;">
+        បទពិសោធន៍ពិតប្រាកដពីអតិថិជនដ៏មានតម្លៃរបស់យើងនៅភ្នំពេញ និងនៅទីនេះ-ទីនោះ។
+      </p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card reveal s1">
+        <div class="review-quot">"</div>
+        <div class="review-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+        <p class="review-body">Best car service in Phnom Penh. Very professional team, super clean workshop, and a comfortable waiting area. They explained everything before starting any work.</p>
+        <div class="reviewer">
+          <div class="reviewer-av" style="background: linear-gradient(135deg, #D40000, #FF5733);">S</div>
+          <div>
+            <div class="reviewer-name">Sopheap K.</div>
+            <div class="reviewer-meta">Google Review · BMW Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal s2">
+        <div class="review-quot">"</div>
+        <div class="review-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+        <p class="review-body">Highly recommend KLAY Auto Service. Great pricing and excellent customer support. My Mercedes has never run better. Will absolutely be coming back.</p>
+        <div class="reviewer">
+          <div class="reviewer-av" style="background: linear-gradient(135deg, #1877F2, #0099FF);">D</div>
+          <div>
+            <div class="reviewer-name">David L.</div>
+            <div class="reviewer-meta">Google Review · Mercedes-Benz Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal s3">
+        <div class="review-quot">"</div>
+        <div class="review-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+        <p class="review-body">Fast, honest, and reliable. My Lexus has never performed better. The diagnostic process was thorough and the pricing was completely transparent from start to finish.</p>
+        <div class="reviewer">
+          <div class="reviewer-av" style="background: linear-gradient(135deg, #FF6B35, #FF4E00);">V</div>
+          <div>
+            <div class="reviewer-name">Virak M.</div>
+            <div class="reviewer-meta">Google Review · Lexus Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal s1">
+        <div class="review-quot">"</div>
+        <div class="review-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+        <p class="review-body">Brought my Land Rover in for a full service. The team was incredibly knowledgeable and the work was completed right on schedule. Outstanding experience.</p>
+        <div class="reviewer">
+          <div class="reviewer-av" style="background: linear-gradient(135deg, #2E7D32, #4CAF50);">R</div>
+          <div>
+            <div class="reviewer-name">Robert T.</div>
+            <div class="reviewer-meta">Google Review · Land Rover Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal s2">
+        <div class="review-quot">"</div>
+        <div class="review-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+        <p class="review-body">Excellent A/C repair. Came in sweltering, left cool! The team diagnosed and fixed the issue within hours. Very fair pricing compared to the dealership.</p>
+        <div class="reviewer">
+          <div class="reviewer-av" style="background: linear-gradient(135deg, #7B1FA2, #AB47BC);">C</div>
+          <div>
+            <div class="reviewer-name">Channary P.</div>
+            <div class="reviewer-meta">Google Review · Toyota Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal s3">
+        <div class="review-quot">"</div>
+        <div class="review-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+        <p class="review-body">The team diagnosed a complex electrical fault in my Audi that two other shops had missed. Top-quality workmanship and the most professional workshop in Phnom Penh.</p>
+        <div class="reviewer">
+          <div class="reviewer-av" style="background: linear-gradient(135deg, #0277BD, #01579B);">M</div>
+          <div>
+            <div class="reviewer-name">Michael S.</div>
+            <div class="reviewer-meta">Google Review · Audi Owner</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Rating summary bar -->
+    <div class="rating-bar reveal">
+      <div class="rb-score">4.5</div>
+      <div class="rb-detail">
+        <div class="rb-stars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+        <div class="rb-txt">Average Customer Rating</div>
+        <div class="rb-src">Based on 46+ verified Google reviews</div>
+      </div>
+      <div class="rb-div"></div>
+      <div class="rb-stat">
+        <strong>46+</strong>
+        <span>Total Reviews</span>
+      </div>
+      <div class="rb-div"></div>
+      <a href="#contact" class="btn btn-red">Leave a Review →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     GALLERY
+═══════════════════════════════════ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gallery-hd reveal">
+      <div class="eyebrow" style="justify-content: center;">Our Work</div>
+      <h2 class="section-title">Real Work. Real Results.</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">
+        A glimpse into our state-of-the-art workshop and the quality we deliver every day.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="g-item reveal-fade s1">
+        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=900&q=80" alt="KLAY Workshop" loading="lazy" />
+        <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+      </div>
+      <div class="g-item reveal-fade s2">
+        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80" alt="Engine Service" loading="lazy" />
+        <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+      </div>
+      <div class="g-item reveal-fade s3">
+        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80" alt="Luxury Vehicle" loading="lazy" />
+        <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+      </div>
+      <div class="g-item reveal-fade s2">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Brake Service" loading="lazy" />
+        <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+      </div>
+      <div class="g-item reveal-fade s3">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Premium Car" loading="lazy" />
+        <div class="g-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <div class="eyebrow" style="justify-content: center; margin: 0 auto 14px;"><span class="t-en">Ready To Book</span><span class="t-kh">ត្រៀមកក់ហើយ</span></div>
+      <h2 class="section-title">
+        <span class="t-en">Ready To Service<br>Your Vehicle?</span>
+        <span class="t-kh" style="font-family:'Kantumruy Pro',sans-serif;">ត្រៀមជ្រូវជាំ<br>ឡានរបស់អ្នក?</span>
+      </h2>
+      <p class="section-sub b-en" style="margin:0 auto 40px; text-align:center;">
+        Book your appointment today and let our experts take care of your car with the premium attention it deserves.
+      </p>
+      <p class="section-sub b-kh" style="margin:0 auto 40px; text-align:center;">
+        កក់ការណាត់ថ្ងៃនេះ ហើយទុកឱ្យអ្នកជំនាញរបស់យើងថែរក្សាឡានរបស់អ្នក ដោយការយកចិត្តទុកដាក់ប្រណីតបំផុត។
+      </p>
+      <div class="cta-btns">
+        <a href="#contact" class="btn btn-red">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+          <span class="t-en">Book Service</span><span class="t-kh">កក់សេវា</span>
+        </a>
+        <a href="tel:061886898" class="btn btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call 061 886 898
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     CONTACT
+═══════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-hd reveal">
+      <div class="eyebrow" style="justify-content: center;">Get In Touch</div>
+      <h2 class="section-title">Find Us &amp; Book Your Service</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">
+        Visit our workshop or reach out via phone, WhatsApp, or social media.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-cards">
+
+        <div class="c-card reveal s1">
+          <div class="c-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="c-card-content">
+            <h4><span class="t-en">Location</span><span class="t-kh">ទីតាំង</span></h4>
+            <p>Street 1003, Phnom Penh, Cambodia · ផ្លូវ ១០០៣ ភ្នំពេញ</p>
+          </div>
+        </div>
+
+        <div class="c-card reveal s2">
+          <div class="c-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.98-.98a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="c-card-content">
+            <h4><span class="t-en">Phone</span><span class="t-kh">ទូរស័ព្ទ</span></h4>
+            <a href="tel:061886898">061 886 898</a>
+          </div>
+        </div>
+
+        <div class="c-card reveal s3">
+          <div class="c-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="c-card-content">
+            <h4>Working Hours</h4>
+            <p>Monday – Saturday: 7:30 AM – 6:00 PM</p>
+          </div>
+        </div>
+
+        <div class="c-card reveal s4">
+          <div class="c-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="c-card-content">
+            <h4>Rating</h4>
+            <p>4.5 / 5 · 46+ Google Reviews</p>
+          </div>
+        </div>
+
+        <div class="social-row reveal">
+          <a href="https://wa.me/855061886898" class="soc-btn soc-wa" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://www.facebook.com/klayautoservice" class="soc-btn soc-fb" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="https://t.me/klayautoservice" class="soc-btn soc-tg" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Telegram
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Google Map -->
+      <div class="map-box reveal-fade">
+        <iframe
+          src="https://maps.google.com/maps?q=KLAY+Auto+Service+Street+1003+Phnom+Penh+Cambodia&output=embed&hl=en&z=16&iwloc=B"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="KLAY Auto Service – Street 1003, Phnom Penh"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <svg class="klay-svg-logo" viewBox="0 0 232 74" xmlns="http://www.w3.org/2000/svg" aria-label="KLAY Auto Service">
+            <defs>
+              <linearGradient id="kRedF" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#CC1E1E"/>
+                <stop offset="55%" stop-color="#A81212"/>
+                <stop offset="100%" stop-color="#780808"/>
+              </linearGradient>
+            </defs>
+            <g transform="skewX(-7)">
+              <text x="4" y="51" font-family="'Bebas Neue','Impact',Arial,sans-serif" font-size="57" fill="url(#kRedF)" letter-spacing="2">KLAY</text>
+            </g>
+            <polygon points="2,57 230,57 225,74 -3,74" fill="#111111"/>
+            <g fill="rgba(255,255,255,0.84)">
+              <polygon points="2,58 5,58 1,73 -2,73"/>
+              <polygon points="7,58 10.5,58 6.5,73 3,73"/>
+              <polygon points="13,58 17,58 13,73 9,73"/>
+              <polygon points="20,58 24.5,58 20.5,73 16,73"/>
+              <polygon points="27.5,58 32.5,58 28.5,73 23.5,73"/>
+              <polygon points="36,58 41.5,58 37.5,73 32,73"/>
+              <polygon points="45,58 51,58 47,73 41,73"/>
+            </g>
+            <line x1="56" y1="58" x2="52" y2="74" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+            <text x="61" y="70" font-family="'Inter',Arial,sans-serif" font-weight="700" font-size="11.5" fill="white" letter-spacing="3.5">AUTO SERVICE</text>
+          </svg>
+        </a>
+        <p class="footer-tagline b-en">Premium automotive repair, maintenance, and diagnostics in Phnom Penh. Trusted by thousands of vehicle owners.</p>
+        <p class="footer-tagline b-kh">ជួសជុល ថែទាំ និងធ្វើរោគវិនិច្ឆ័យយានយន្តប្រកបដោយគុណភាពខ្ពស់នៅភ្នំពេញ ត្រូវបានទុកចិត្តដោយម្ចាស់ឡានរាប់ពាន់នាក់។</p>
+        <div class="footer-rating">
+          <div class="stars">
+            <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+          </div>
+          <span>4.5 / 5 · 46+ Reviews</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Engine Diagnostics</a></li>
+          <li><a href="#services">Suspension Repair</a></li>
+          <li><a href="#services">Brake Service</a></li>
+          <li><a href="#services">Air Conditioning</a></li>
+          <li><a href="#services">Oil Change</a></li>
+          <li><a href="#services">Wheel Alignment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:061886898">061 886 898</a></li>
+          <li>Street 1003, Phnom Penh</li>
+          <li>Mon – Sat: 7:30 AM – 6:00 PM</li>
+          <li><a href="https://wa.me/855061886898">WhatsApp Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2026 <span>KLAY Auto Service</span>. All Rights Reserved. · Street 1003, Phnom Penh, Cambodia
+      </p>
+      <p class="footer-copy b-en">Premium Auto Care &amp; Repair You Can Trust</p>
+      <p class="footer-copy b-kh">ថែទាំ និងជួសជុលឡានប្រណីតដែលអ្នកអាចជឿទុកចិត្ត</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Floating CTA Dock -->
+<div class="float-dock" id="floatDock">
+  <a href="tel:061886898" class="f-btn call" title="Call KLAY Auto Service">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+  <a href="https://wa.me/855061886898" class="f-btn wa" target="_blank" rel="noopener" title="WhatsApp KLAY">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════ -->
+<script>
+  /* ── Language toggle ── */
+  function toggleLang() {
+    const isKh = document.body.classList.toggle('lang-kh');
+    document.documentElement.lang = isKh ? 'km' : 'en';
+    try { localStorage.setItem('klayLang', isKh ? 'kh' : 'en'); } catch(e){}
+  }
+  (function(){
+    try {
+      if (localStorage.getItem('klayLang') === 'kh') {
+        document.body.classList.add('lang-kh');
+        document.documentElement.lang = 'km';
+      }
+    } catch(e){}
+  })();
+
+  /* ── Navbar scroll state ── */
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 56);
+    document.getElementById('floatDock').classList.toggle('show', window.scrollY > 380);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Mobile menu ── */
+  const ham     = document.getElementById('ham');
+  const mobMenu = document.getElementById('mobMenu');
+  const mobClose = document.getElementById('mobClose');
+
+  ham.addEventListener('click', () => {
+    mobMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  mobClose.addEventListener('click', closeMenu);
+
+  function closeMenu() {
+    mobMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── Smooth scroll for anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 76, behavior: 'smooth' });
+    });
+  });
+
+  /* ── Scroll-reveal (IntersectionObserver) ── */
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -44px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-fade').forEach(el => revealObs.observe(el));
+
+  /* ── Counter animation ── */
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.querySelectorAll('[data-count]').forEach(el => {
+        const target = +el.dataset.count;
+        const suffix = el.dataset.suffix || '';
+        const dur = 1800;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(ease * target).toLocaleString() + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+      counterObs.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+
+  const statsEl = document.querySelector('.stats-grid');
+  if (statsEl) counterObs.observe(statsEl);
+</script>
+
+</body>
+</html>

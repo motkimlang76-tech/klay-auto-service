@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" fill="none">
+  <!-- Lamborghini shield outline -->
+  <path d="M50 4 L90 22 L90 70 Q90 100 50 108 Q10 100 10 70 L10 22 Z" stroke="white" stroke-width="2.5"/>
+  <!-- Charging bull silhouette (simplified) -->
+  <!-- Body -->
+  <ellipse cx="50" cy="62" rx="22" ry="16" fill="white" opacity="0.9"/>
+  <!-- Head -->
+  <circle cx="72" cy="54" r="9" fill="white" opacity="0.9"/>
+  <!-- Horns -->
+  <path d="M68 46 Q64 34 70 30 Q73 34 71 46" fill="white" opacity="0.9"/>
+  <path d="M76 46 Q80 34 78 28 Q74 34 73 46" fill="white" opacity="0.9"/>
+  <!-- Legs -->
+  <rect x="36" y="76" width="6" height="16" rx="2" fill="white" opacity="0.9"/>
+  <rect x="46" y="76" width="6" height="14" rx="2" fill="white" opacity="0.9"/>
+  <rect x="56" y="76" width="6" height="16" rx="2" fill="white" opacity="0.9"/>
+  <!-- Tail -->
+  <path d="M28 58 Q18 52 16 44 Q22 50 30 56" fill="white" opacity="0.9"/>
+  <!-- LAMBORGHINI text -->
+  <text x="50" y="25" font-family="'Helvetica Neue',Arial,sans-serif" font-size="6.5" font-weight="800" fill="white" text-anchor="middle" letter-spacing="0.5">LAMBORGHINI</text>
+</svg>

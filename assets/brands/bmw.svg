@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Outer ring -->
+  <circle cx="50" cy="50" r="46" stroke="white" stroke-width="2.5"/>
+  <!-- Inner dividing ring -->
+  <circle cx="50" cy="50" r="30" stroke="white" stroke-width="2"/>
+  <!-- Top-left quadrant: white (propeller blade) -->
+  <path d="M50 20 A30 30 0 0 0 20 50 L50 50 Z" fill="white"/>
+  <!-- Bottom-right quadrant: white (propeller blade) -->
+  <path d="M50 80 A30 30 0 0 0 80 50 L50 50 Z" fill="white"/>
+  <!-- Top-right and bottom-left quadrants remain dark (transparent) -->
+  <!-- BMW text -->
+  <text x="50" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9" font-weight="800" fill="white" text-anchor="middle" letter-spacing="1.5">BMW</text>
+</svg>
